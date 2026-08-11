@@ -1,5 +1,10 @@
 document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear();});
 
+// Keep the final-year MSc performance consistent with the verified CV record.
+document.querySelectorAll('.edu-metric strong').forEach(el=>{
+  if(el.textContent.trim()==='7.8 / 8.0') el.textContent='7.6 / 8.0';
+});
+
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -11,7 +16,7 @@ const observer=new IntersectionObserver(entries=>{
 
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// Keep disclosure interaction calm: only rotate the plus through CSS.
+// Keep disclosure interaction calm: only one development item opens at a time.
 document.querySelectorAll('.timeline-clean details').forEach(item=>{
   item.addEventListener('toggle',()=>{
     if(!item.open)return;
