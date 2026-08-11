@@ -1,0 +1,98 @@
+/* Compact home navigation inspired by the reference's small pill controls. */
+.home-section-nav{
+  width:min(980px,calc(100% - 48px));
+  margin:0 auto clamp(18px,2.8vh,28px);
+  padding:7px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+  border:1px solid rgba(205,201,193,.92);
+  border-radius:999px;
+  background:rgba(255,255,255,.68);
+  box-shadow:0 16px 46px rgba(36,34,30,.07);
+  backdrop-filter:blur(18px) saturate(135%);
+  -webkit-backdrop-filter:blur(18px) saturate(135%);
+}
+.home-section-nav>a{
+  position:relative;
+  min-width:0;
+  min-height:58px;
+  padding:0 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border:0!important;
+  border-radius:999px;
+  background:transparent;
+  text-decoration:none;
+  color:#242321;
+  transition:background .22s ease,color .22s ease,transform .22s cubic-bezier(.2,.7,.2,1),box-shadow .22s ease;
+}
+.home-section-nav>a:hover{
+  background:#1c1c1b;
+  color:#fff;
+  transform:translateY(-1px);
+  box-shadow:0 10px 24px rgba(24,24,23,.12);
+}
+.home-section-nav>a:active{transform:translateY(0) scale(.985)}
+.home-section-nav .section-icon{
+  width:30px;
+  height:30px;
+  flex:0 0 30px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(190,186,178,.9);
+  border-radius:50%;
+  font-family:"Manrope",sans-serif;
+  font-size:.82rem;
+  line-height:1;
+  transition:border-color .22s ease,background .22s ease;
+}
+.home-section-nav>a:hover .section-icon{
+  border-color:rgba(255,255,255,.35);
+  background:rgba(255,255,255,.08);
+}
+.home-section-nav strong{
+  font-family:"Manrope",sans-serif;
+  font-size:.82rem;
+  font-weight:600;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+}
+.home-section-nav b{
+  margin-left:2px;
+  font-size:.72rem;
+  font-weight:400;
+  opacity:.55;
+  transition:transform .22s ease,opacity .22s ease;
+}
+.home-section-nav>a:hover b{transform:translate(2px,-2px);opacity:1}
+.home-section-nav small,.home-section-nav em,.home-section-nav div{display:contents}
+
+@media(max-width:780px){
+  .home-section-nav{
+    width:calc(100% - 30px);
+    margin-bottom:16px;
+    padding:6px;
+    grid-template-columns:repeat(2,1fr);
+    border-radius:24px;
+  }
+  .home-section-nav>a{
+    min-height:52px;
+    border-radius:18px;
+    justify-content:flex-start;
+    padding:0 13px;
+  }
+  .home-section-nav b{margin-left:auto}
+}
+
+@media(max-width:440px){
+  .home-section-nav{
+    width:calc(100% - 22px);
+    gap:4px;
+  }
+  .home-section-nav>a{min-height:48px;padding:0 10px;gap:8px}
+  .home-section-nav .section-icon{width:27px;height:27px;flex-basis:27px;font-size:.74rem}
+  .home-section-nav strong{font-size:.76rem}
+}
